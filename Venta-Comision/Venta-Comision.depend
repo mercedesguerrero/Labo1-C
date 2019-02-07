@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1549493594 source:c:\test\mercedes\venta-comision\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+
+1549493988 source:c:\test\mercedes\venta-comision\vendedor.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+
+1549483623 c:\test\mercedes\venta-comision\arraylist.h
+
+1549483930 source:c:\test\mercedes\venta-comision\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+
+1549493988 c:\test\mercedes\venta-comision\vendedor.h
+
+1549493570 c:\test\mercedes\venta-comision\parser.h
+
+1549493988 source:c:\test\mercedes\venta-comision\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+
+1549476084 source:c:\users\maguerrero_mecon\desktop\programación c\venta-comision\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+
+1549476086 c:\users\maguerrero_mecon\desktop\programación c\venta-comision\arraylist.h
+
+1549476086 c:\users\maguerrero_mecon\desktop\programación c\venta-comision\vendedor.h
+
+1549476086 c:\users\maguerrero_mecon\desktop\programación c\venta-comision\parser.h
+
+1549476086 source:c:\users\maguerrero_mecon\desktop\programación c\venta-comision\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+
+1549476086 source:c:\users\maguerrero_mecon\desktop\programación c\venta-comision\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+
+1549476086 source:c:\users\maguerrero_mecon\desktop\programación c\venta-comision\vendedor.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+
