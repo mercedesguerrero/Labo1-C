@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
-#include "ArrayList.h"
+#include "Arraylist.h"
 #include "Vendedor.h"
 #include "Parser.h"
 
@@ -42,7 +42,8 @@ int main()
             presionarContinuar();
             break;
         case 3:
-
+            lista->map(lista, calcularComision);
+            mostrarVendedores(lista);
             presionarContinuar();
             break;
         case 4:

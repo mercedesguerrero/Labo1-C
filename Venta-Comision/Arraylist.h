@@ -223,3 +223,6 @@ int resizeUp(ArrayList* this);
 int expand(ArrayList* this,int index);
 int contract(ArrayList* this,int index);
 //___________________
+
+int al_mapV2(ArrayList* this, int (*pFunc)(void*));
+ArrayList* al_filter(ArrayList* this, int (*pFunc)(void*));

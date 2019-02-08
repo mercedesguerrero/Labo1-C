@@ -37,3 +37,5 @@ void mostrarVendedor(eVendedor* unVendedor);
 void mostrarVendedores(ArrayList* lista);
 int buscarVendedor(ArrayList* lista, int id);
 
+int calcularComision(eVendedor* unVendedor);
+

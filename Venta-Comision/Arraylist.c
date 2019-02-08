@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ArrayList.h"
+#include "Arraylist.h"
 #include "Vendedor.h"
 #include "Parser.h"
 
@@ -619,20 +619,52 @@ int resizeDown(ArrayList* pList)
     return returnAux;
 }
 
-int al_map(ArrayList* this, void (*pFunc)(ArrayList*)){
-
+int al_map(ArrayList* this, void (*pFunc)(ArrayList*))
+{
     int todoOk = 0;
 
-    if(this != NULL && pFunc != NULL){
-
-
-
-       for(int i=0; i < this->len(this); i++){
-
-        pFunc(this->get(this, i));
-       }
+    if(this != NULL && pFunc != NULL)
+    {
+        for(int i=0; i< this->len(this); i++)
+        {
+            pFunc(this->get(this, i));
+        }
         todoOk = 1;
     }
-
     return todoOk;
+}
+
+int al_mapV2(ArrayList* this, int (*pFunc)(void*)) //o int (*pFunc)(ArrayList*)
+{
+    int todoOk = 0;
+
+    if(this != NULL && pFunc ==0)
+    {
+        for(int i=0; i< this->len(this); i++)
+        {
+            pFunc(this->get(this, i));
+        }
+        todoOk = 1;
+    }
+    return todoOk;
+}
+
+ArrayList* al_filter(ArrayList* this, int (*pFunc)(void*))
+{
+    ArrayList* subLista = NULL;
+
+    if( this != NULL)
+    {
+        for(int i=0; i< this->len(this); i++)
+        {
+            pFunc(this->get(this, i));
+            subLista = al_newArrayList();
+
+            if(subLista != NULL)
+            {
+                subLista->add(this, subLista->get(this, i));
+            }
+        }
+    }
+    return subLista;
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ArrayList.h"
+#include "Arraylist.h"
 #include "Vendedor.h"
 #include "Parser.h"
 
@@ -41,7 +41,7 @@ void parsearVendedores(char* path, ArrayList* listaVendedores)
                     nuevoVendedor->cant_prod_vendidos =  atoi(buffer[3]);
                     nuevoVendedor->monto_vendido = atof(buffer[4]);
 
-                    nuevoVendedor->comision = set_comision(nuevoVendedor, 2.3);
+                    //nuevoVendedor->comision = set_comision(nuevoVendedor, 2.3);
                     nuevoVendedor->isEmpty = set_isEmpty(nuevoVendedor, OCUPADO);
 
                     listaVendedores->add(listaVendedores, nuevoVendedor);// si

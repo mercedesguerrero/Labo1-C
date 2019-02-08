@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ArrayList.h"
+#include "Arraylist.h"
 #include "Vendedor.h"
 #include "Parser.h"
 
@@ -20,8 +20,8 @@ eVendedor* newVendedor()
         strcpy(nuevoVendedor->nombre, "");
         nuevoVendedor->nivel = 0;
         nuevoVendedor->cant_prod_vendidos = 0;
-        nuevoVendedor->monto_vendido = 0.0;
-        nuevoVendedor->comision = 0.0;
+        nuevoVendedor->monto_vendido = 0;
+        nuevoVendedor->comision = 0;
         nuevoVendedor->isEmpty = LIBRE;
     }
 
@@ -276,16 +276,24 @@ void agregarVendedor(ArrayList* vendedores, int _nivel)
 
 void mostrarVendedor(eVendedor* unVendedor)
 {
-    printf(" %4d  %14s  %12s    %12d     %12.2f \n\n", unVendedor->id, unVendedor->nombre, cargarDescripcion(unVendedor->nivel), unVendedor->cant_prod_vendidos, unVendedor->monto_vendido);
+    //printf("%f\n", unVendedor->comision);
+    if(get_comision(unVendedor)== 0)
+    {
+        printf(" %4d  %14s  %12s    %12d     %12.2f     %12s\n\n", get_id(unVendedor), get_nombre(unVendedor), cargarDescripcion(unVendedor->nivel), get_cant_prod_vendidos(unVendedor), get_monto_vendido(unVendedor), "No se calcula");
+    }
+    else
+    {
+        printf(" %4d  %14s  %12s    %12d     %12.2f     %12.2f\n\n", get_id(unVendedor), get_nombre(unVendedor), cargarDescripcion(unVendedor->nivel), get_cant_prod_vendidos(unVendedor), get_monto_vendido(unVendedor), unVendedor->comision);
+    }
 }
 
 void mostrarVendedores(ArrayList* lista)
 {
     eVendedor* unVendedor;
     system("cls");
-    printf("-------------------------------------------------------------------------\n");
-    printf("   ID   |     Nombre    |    Nivel    | Prods Vendidos |   Monto Vendido\n");
-    printf("-------------------------------------------------------------------------\n\n");
+    printf("---------------------------------------------------------------------------------------------\n");
+    printf("   ID   |     Nombre    |    Nivel    | Prods Vendidos |   Monto Vendido    |    Comision\n");
+    printf("---------------------------------------------------------------------------------------------\n\n");
     for(int i=0; i< lista->len(lista); i++)
     {
         unVendedor = (eVendedor*) lista->get(lista, i);
@@ -294,7 +302,7 @@ void mostrarVendedores(ArrayList* lista)
             mostrarVendedor(unVendedor);
         }
     }
-    printf("---------------------------------------------------------------------------\n\n");
+    printf("---------------------------------------------------------------------------------------------\n\n");
 }
 
 int buscarVendedor(ArrayList* lista, int id)
@@ -314,4 +322,42 @@ int buscarVendedor(ArrayList* lista, int id)
     return indice;
 }
 
+int calcularComision(eVendedor* unVendedor)
+{
+    float comision;
+    int ret_aux=-1;
+
+    switch(get_nivel(unVendedor))
+    {
+        case 2:
+            comision= get_monto_vendido(unVendedor)*2/100;
+            ret_aux=1;
+            break;
+        default:
+            if(get_cant_prod_vendidos(unVendedor)>100)
+            {
+                comision= get_monto_vendido(unVendedor)*5/100;
+                ret_aux=1;
+                break;
+            }
+            else
+            {
+                comision= get_monto_vendido(unVendedor)*3.5/100;
+                ret_aux=1;
+            }
+            break;
+    }
+
+    if(ret_aux==1)
+    {
+        set_comision(unVendedor, comision);
+    }
+
+    return ret_aux;
+}
+
+int filtrarPorNivel(eVendedor* unVendedor)
+{
+
+}
 
