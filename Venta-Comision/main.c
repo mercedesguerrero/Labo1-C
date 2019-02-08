@@ -6,9 +6,9 @@
 #include "Vendedor.h"
 #include "Parser.h"
 
-#define JUNIOR 3
-#define ESTANDARD 2
-#define EXPERTO 1
+#define JUNIOR 2
+#define ESTANDARD 1
+#define EXPERTO 0
 
 #define LIBRE 0
 #define OCUPADO 1
@@ -27,16 +27,14 @@ int main()
         exit(1);
     }
 
-    parsearVendedores("DATA.csv", lista);
-
     do
     {
         switch(menu())
         {
 
         case 1:
-            newVendedorParametrizado(123, "Marcelo", ESTANDARD, 120, 2485.67, 25.3, OCUPADO);
-            //agregarVendedor(lista, 3);
+            parsearVendedores("DATA.csv", lista);
+            printf("\nSe cargaron los vendedores\n");
             presionarContinuar();
             break;
         case 2:
@@ -45,26 +43,28 @@ int main()
             break;
         case 3:
 
+            presionarContinuar();
             break;
         case 4:
 
-            system("pause");
+            presionarContinuar();
             break;
         case 5:
-
-            system("pause");
+            newVendedorParametrizado(123, "Marcelo", ESTANDARD, 120, 2485.67);
+            //agregarVendedor(lista, 3);
+            presionarContinuar();
             break;
         case 6:
 
-            system("pause");
+            presionarContinuar();
             break;
         case 7:
 
-            system("pause");
+            presionarContinuar();
             break;
         case 8:
 
-            system("pause");
+            presionarContinuar();
             break;
         case 10:
             seguir = 'n';
@@ -82,14 +82,14 @@ int menu()
     int opcion;
     system("cls");
     printf("\n      ***Menu de Opciones***\n\n");
-    printf("   1- Alta\n");
-    printf("   2- Baja\n");
-    printf("   3- Modificar\n");
-    printf("   4- Listar\n");
-    printf("   5- Listar todos los empleados de un sector\n");
-    printf("   6- Ordenar empleados por sector y dentro del sector por nombre\n");
-    printf("   7- Mostrar los datos de el o los empleados que mas ganan por sector\n");
-    printf("   8- Crear Arraylist con empleados de Sistemas\n");
+    printf("   1- Cargar archivo\n");
+    printf("   2- Imprimir vendedores\n");
+    printf("   3- Calcular comisiones\n");
+    printf("   4- Generar archivo de comisiones para nivel\n");
+    printf("   5- Vendedor hardcodeado\n");
+    printf("   6- -\n");
+    printf("   7- -\n");
+    printf("   8- -\n");
     printf("  10- Salir\n");
     printf("\n   Ingrese opcion: ");
     fflush(stdin);

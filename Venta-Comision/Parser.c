@@ -29,7 +29,7 @@ void parsearVendedores(char* path, ArrayList* listaVendedores)
 
             cant =  fscanf(f,"%[^,],%[^,],%[^,],%[^,],%s\n", buffer[0],buffer[1],buffer[2],buffer[3],buffer[4]);
 
-            if(cant == 6)
+            if(cant == 5)
             {
                 nuevoVendedor = newVendedor();
 
@@ -57,8 +57,6 @@ void parsearVendedores(char* path, ArrayList* listaVendedores)
 
         fclose(f);
     }
-
-
 
 }
 

@@ -13,7 +13,7 @@ typedef struct{
 }eVendedor;
 
 eVendedor* newVendedor();
-eVendedor* newVendedorParametrizado(int _id, char* _nombre, int nivel, int _cant_prod_vendidos, float _monto_vendido, float _comision, int _isEmpty);
+eVendedor* newVendedorParametrizado(int _id, char* _nombre, int nivel, int _cant_prod_vendidos, float _monto_vendido);
 
 int set_id(eVendedor* unVendedor, int valor);
 int set_nombre(eVendedor* unVendedor, char* _nombre);

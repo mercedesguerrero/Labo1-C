@@ -77,3 +77,42 @@
 	"Vendedor.h"
 	"Parser.h"
 
+1549476084 source:c:\users\maguerrero_mecon\documents\modelos parcial labo1 c\venta-comision\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+
+1549476086 c:\users\maguerrero_mecon\documents\modelos parcial labo1 c\venta-comision\arraylist.h
+
+1549644596 c:\users\maguerrero_mecon\documents\modelos parcial labo1 c\venta-comision\vendedor.h
+
+1549476086 c:\users\maguerrero_mecon\documents\modelos parcial labo1 c\venta-comision\parser.h
+
+1549644596 source:c:\users\maguerrero_mecon\documents\modelos parcial labo1 c\venta-comision\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+
+1549644764 source:c:\users\maguerrero_mecon\documents\modelos parcial labo1 c\venta-comision\vendedor.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+
+1549644596 source:c:\users\maguerrero_mecon\documents\modelos parcial labo1 c\venta-comision\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Vendedor.h"
+	"Parser.h"
+

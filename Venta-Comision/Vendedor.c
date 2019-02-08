@@ -5,6 +5,9 @@
 #include "Vendedor.h"
 #include "Parser.h"
 
+#define LIBRE 0
+#define OCUPADO 1
+
 //CONSTRUCTOR
 
 eVendedor* newVendedor()
@@ -19,7 +22,7 @@ eVendedor* newVendedor()
         nuevoVendedor->cant_prod_vendidos = 0;
         nuevoVendedor->monto_vendido = 0.0;
         nuevoVendedor->comision = 0.0;
-        nuevoVendedor->isEmpty = 0;
+        nuevoVendedor->isEmpty = LIBRE;
     }
 
     return nuevoVendedor;
@@ -27,7 +30,7 @@ eVendedor* newVendedor()
 
 //CONSTRUCTOR PARAMETRIZADO
 
-eVendedor* newVendedorParametrizado(int _id, char* _nombre, int nivel, int _cant_prod_vendidos, float _monto_vendido, float _comision, int _isEmpty)
+eVendedor* newVendedorParametrizado(int _id, char* _nombre, int nivel, int _cant_prod_vendidos, float _monto_vendido)
 {
     eVendedor* nuevoVendedor = (eVendedor*)malloc(sizeof(eVendedor));
 
@@ -38,8 +41,8 @@ eVendedor* newVendedorParametrizado(int _id, char* _nombre, int nivel, int _cant
         nuevoVendedor->nivel = 0;
         nuevoVendedor->cant_prod_vendidos = _cant_prod_vendidos;
         nuevoVendedor->monto_vendido = _monto_vendido;
-        nuevoVendedor->comision = _comision;
-        nuevoVendedor->isEmpty = _isEmpty;
+        nuevoVendedor->comision = 0.0;
+        nuevoVendedor->isEmpty = OCUPADO;
     }
 
     mostrarVendedor(nuevoVendedor);
@@ -267,7 +270,7 @@ void mostrarVendedores(ArrayList* lista)
     for(int i=0; i< lista->len(lista); i++)
     {
         unVendedor = (eVendedor*) lista->get(lista, i);
-        if( unVendedor->isEmpty == 1)
+        if( unVendedor->isEmpty == OCUPADO)
         {
             mostrarVendedor(unVendedor);
         }
