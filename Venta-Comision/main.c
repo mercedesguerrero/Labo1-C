@@ -15,11 +15,14 @@
 
 int menu();
 void presionarContinuar();
+int getInt(char* mensaje);
 
 int main()
 {
     char seguir = 's';
     ArrayList* lista = al_newArrayList();
+
+    int respuesta;
 
     if(lista == NULL)
     {
@@ -47,6 +50,22 @@ int main()
             presionarContinuar();
             break;
         case 4:
+            system("cls");
+            printf("  1- EXPERTO |   2- ESTANDARD |   3- JUNIOR\n\n");
+            respuesta= getInt("Ingrese el numero asociado al nivel para el que desea generar la lista: ");
+
+            switch(respuesta)
+            {
+                case 1:
+                    mostrarVendedores(lista->filter(lista, filtrarPorExperto));
+                    break;
+                case 2:
+                    mostrarVendedores(lista->filter(lista, filtrarPorEstandard));
+                    break;
+                case 3:
+                    mostrarVendedores(lista->filter(lista, filtrarPorJunior));
+                    break;
+            }
 
             presionarContinuar();
             break;
@@ -103,4 +122,13 @@ void presionarContinuar()
 {
     printf("\nPresione cualquier tecla para continuar ");
     getch();
+}
+
+int getInt(char* mensaje)
+{
+    int auxiliar;
+    printf("%s",mensaje);
+    scanf("%d",&auxiliar);
+
+    return auxiliar;
 }

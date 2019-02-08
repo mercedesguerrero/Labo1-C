@@ -52,6 +52,7 @@ ArrayList* al_newArrayList(void)
             pList->deleteArrayList = al_deleteArrayList;
             pList->sort = al_sort;
             pList->map = al_map;
+            pList->filter = al_filter;
             returnAux = pList;
         }
         else
@@ -652,17 +653,18 @@ int al_mapV2(ArrayList* this, int (*pFunc)(void*)) //o int (*pFunc)(ArrayList*)
 ArrayList* al_filter(ArrayList* this, int (*pFunc)(void*))
 {
     ArrayList* subLista = NULL;
+    int aux=-1;
+    subLista = al_newArrayList();
 
-    if( this != NULL)
+    if( this != NULL )
     {
         for(int i=0; i< this->len(this); i++)
         {
-            pFunc(this->get(this, i));
-            subLista = al_newArrayList();
+            aux= pFunc(this->get(this, i));
 
-            if(subLista != NULL)
+            if(subLista != NULL && aux== 1)
             {
-                subLista->add(this, subLista->get(this, i));
+                subLista->add(subLista, this->get(this, i));
             }
         }
     }

@@ -8,6 +8,10 @@
 #define LIBRE 0
 #define OCUPADO 1
 
+#define JUNIOR 2
+#define ESTANDARD 1
+#define EXPERTO 0
+
 //CONSTRUCTOR
 
 eVendedor* newVendedor()
@@ -356,8 +360,34 @@ int calcularComision(eVendedor* unVendedor)
     return ret_aux;
 }
 
-int filtrarPorNivel(eVendedor* unVendedor)
+int filtrarPorExperto(eVendedor* unVendedor)
 {
-
+    int ret_aux= -1;
+    if(get_nivel(unVendedor)== EXPERTO)
+    {
+        ret_aux= 1;
+    }
+    return ret_aux;
 }
+
+int filtrarPorEstandard(eVendedor* unVendedor)
+{
+    int ret_aux= -1;
+    if(get_nivel(unVendedor)== ESTANDARD)
+    {
+        ret_aux= 1;
+    }
+    return ret_aux;
+}
+
+int filtrarPorJunior(eVendedor* unVendedor)
+{
+    int ret_aux= -1;
+    if(get_nivel(unVendedor)== JUNIOR)
+    {
+        ret_aux= 1;
+    }
+    return ret_aux;
+}
+
 

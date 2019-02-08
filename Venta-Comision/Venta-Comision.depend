@@ -116,7 +116,7 @@
 	"Vendedor.h"
 	"Parser.h"
 
-1549662646 source:c:\test\mercedes\modelos parcial c\labo1-c\venta-comision\main.c
+1549666553 source:c:\test\mercedes\modelos parcial c\labo1-c\venta-comision\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -125,9 +125,9 @@
 	"Vendedor.h"
 	"Parser.h"
 
-1549656681 c:\test\mercedes\modelos parcial c\labo1-c\venta-comision\arraylist.h
+1549665822 c:\test\mercedes\modelos parcial c\labo1-c\venta-comision\arraylist.h
 
-1549660382 c:\test\mercedes\modelos parcial c\labo1-c\venta-comision\vendedor.h
+1549666066 c:\test\mercedes\modelos parcial c\labo1-c\venta-comision\vendedor.h
 
 1549654222 c:\test\mercedes\modelos parcial c\labo1-c\venta-comision\parser.h
 
@@ -139,7 +139,7 @@
 	"Vendedor.h"
 	"Parser.h"
 
-1549662838 source:c:\test\mercedes\modelos parcial c\labo1-c\venta-comision\vendedor.c
+1549666553 source:c:\test\mercedes\modelos parcial c\labo1-c\venta-comision\vendedor.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -147,7 +147,7 @@
 	"Vendedor.h"
 	"Parser.h"
 
-1549656697 source:c:\test\mercedes\modelos parcial c\labo1-c\venta-comision\arraylist.c
+1549667119 source:c:\test\mercedes\modelos parcial c\labo1-c\venta-comision\arraylist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

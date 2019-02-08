@@ -39,3 +39,7 @@ int buscarVendedor(ArrayList* lista, int id);
 
 int calcularComision(eVendedor* unVendedor);
 
+int filtrarPorExperto(eVendedor* unVendedor);
+int filtrarPorEstandard(eVendedor* unVendedor);
+int filtrarPorJunior(eVendedor* unVendedor);
+

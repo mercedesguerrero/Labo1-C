@@ -21,6 +21,7 @@ struct ArrayList{
     int     (*containsAll)();
     int     (*sort)();
     int     (*map)();
+    struct ArrayList* (* filter)();
     struct ArrayList* (* clone)();
     struct ArrayList* (*subList)();
     int     (*deleteArrayList)();
