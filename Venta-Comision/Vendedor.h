@@ -30,6 +30,8 @@ float get_monto_vendido(eVendedor* unVendedor);
 float get_comision(eVendedor* unVendedor);
 int get_isEmpty(eVendedor* unVendedor);
 
+char* cargarDescripcion(int valor);
+
 void agregarVendedor(ArrayList* vendedores, int _nivel);
 void mostrarVendedor(eVendedor* unVendedor);
 void mostrarVendedores(ArrayList* lista);

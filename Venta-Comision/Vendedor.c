@@ -160,6 +160,25 @@ int get_nivel(eVendedor* unVendedor)
     return valor;
 }
 
+char* cargarDescripcion(int valor)
+{
+    char* descrip;
+    switch(valor)
+    {
+        case 0:
+            descrip= "Experto";
+            break;
+        case 1:
+            descrip= "Estandar";
+            break;
+        case 2:
+            descrip= "Junior";
+            break;
+    }
+
+    return descrip;
+}
+
 int get_cant_prod_vendidos(eVendedor* unVendedor)
 {
     int valor = -1;
@@ -257,16 +276,16 @@ void agregarVendedor(ArrayList* vendedores, int _nivel)
 
 void mostrarVendedor(eVendedor* unVendedor)
 {
-    printf(" %4d %10s  %2d   %6.2f \n\n", unVendedor->id, unVendedor->nombre, unVendedor->cant_prod_vendidos, unVendedor->monto_vendido);
+    printf(" %4d  %14s  %12s    %12d     %12.2f \n\n", unVendedor->id, unVendedor->nombre, cargarDescripcion(unVendedor->nivel), unVendedor->cant_prod_vendidos, unVendedor->monto_vendido);
 }
 
 void mostrarVendedores(ArrayList* lista)
 {
     eVendedor* unVendedor;
     system("cls");
-    printf("------------------------------------------------------\n");
-    printf("  ID  |  Nombre  |  Productos Vendidos | Monto Vendido\n");
-    printf("------------------------------------------------------\n\n");
+    printf("-------------------------------------------------------------------------\n");
+    printf("   ID   |     Nombre    |    Nivel    | Prods Vendidos |   Monto Vendido\n");
+    printf("-------------------------------------------------------------------------\n\n");
     for(int i=0; i< lista->len(lista); i++)
     {
         unVendedor = (eVendedor*) lista->get(lista, i);
@@ -275,7 +294,7 @@ void mostrarVendedores(ArrayList* lista)
             mostrarVendedor(unVendedor);
         }
     }
-    printf("-------------------------------------------------------\n\n");
+    printf("---------------------------------------------------------------------------\n\n");
 }
 
 int buscarVendedor(ArrayList* lista, int id)
