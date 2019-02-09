@@ -51,19 +51,33 @@ int main()
             break;
         case 4:
             system("cls");
-            printf("  1- EXPERTO |   2- ESTANDARD |   3- JUNIOR\n\n");
-            respuesta= getInt("Ingrese el numero asociado al nivel para el que desea generar la lista: ");
+            printf("\n ---------------------------------------------------------------------------");
+            printf("\n|       1- EXPERTO       |       2- ESTANDARD       |       3- JUNIOR       |");
+            printf("\n ---------------------------------------------------------------------------");
+            respuesta= getInt("\n\nIngrese el numero asociado al nivel para el que desea generar la lista: ");
 
             switch(respuesta)
             {
                 case 1:
-                    mostrarVendedores(lista->filter(lista, filtrarPorExperto));
+                    if(guardarArchivoVendedores("EXPERTOS.csv", lista->filter(lista, filtrarPorExperto))==1)
+                    {
+                        mostrarVendedores(lista->filter(lista, filtrarPorExperto));
+                        printf("\n\n Se creo el archivo de vendedores nivel EXPERTO\n");
+                    }
                     break;
                 case 2:
-                    mostrarVendedores(lista->filter(lista, filtrarPorEstandard));
+                    if(guardarArchivoVendedores("ESTANDARD.csv", lista->filter(lista, filtrarPorEstandard))==1)
+                    {
+                        mostrarVendedores(lista->filter(lista, filtrarPorEstandard));
+                        printf("\n\n Se creo el archivo de vendedores nivel ESTANDARD\n");
+                    }
                     break;
                 case 3:
-                    mostrarVendedores(lista->filter(lista, filtrarPorJunior));
+                    if(guardarArchivoVendedores("JUNIOR.csv", lista->filter(lista, filtrarPorJunior))==1)
+                    {
+                        mostrarVendedores(lista->filter(lista, filtrarPorJunior));
+                        printf("\n\n Se creo el archivo de vendedores nivel JUNIOR\n");
+                    }
                     break;
             }
 

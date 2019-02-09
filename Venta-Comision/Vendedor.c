@@ -296,7 +296,7 @@ void mostrarVendedores(ArrayList* lista)
     eVendedor* unVendedor;
     system("cls");
     printf("---------------------------------------------------------------------------------------------\n");
-    printf("   ID   |     Nombre    |    Nivel    | Prods Vendidos |   Monto Vendido    |    Comision\n");
+    printf("   ID   |     Nombre    |    Nivel    | Prods Vendidos |   Monto Vendido  |    Comision\n");
     printf("---------------------------------------------------------------------------------------------\n\n");
     for(int i=0; i< lista->len(lista); i++)
     {

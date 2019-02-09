@@ -60,9 +60,9 @@ void parsearVendedores(char* path, ArrayList* listaVendedores)
 
 }
 
-void guardarVendedores(char* path, ArrayList* listaVendedores)
+int guardarArchivoVendedores(char* path, ArrayList* listaVendedores)
 {
-
+    int retorno=-1;
     FILE* f;
 
     f = fopen(path, "w");
@@ -71,16 +71,15 @@ void guardarVendedores(char* path, ArrayList* listaVendedores)
     if(f != NULL)
     {
 
-        fprintf(f, "ID,Nombre,Nivel,Cant prod vendidos,Monto vendido\n");
+        fprintf(f, "ID,Nombre,Nivel,Cant prod vendidos,Monto vendido,Comision\n");
 
         for(int i=0; i < listaVendedores->len(listaVendedores); i++)
         {
             unVendedor = (eVendedor*)listaVendedores->get(listaVendedores, i);
-            fprintf(f,"%d,%s,%d,%d,%.2f\n", unVendedor->id, unVendedor->nombre, unVendedor->nivel, unVendedor->cant_prod_vendidos, unVendedor->monto_vendido);
+            fprintf(f,"%d,%s,%d,%d,%.2f,%.2f\n", get_id(unVendedor), get_nombre(unVendedor), get_nivel(unVendedor), get_cant_prod_vendidos(unVendedor), get_monto_vendido(unVendedor), unVendedor->comision);
         }
-
+        retorno= 1;
         fclose(f);
-
     }
-
+    return retorno;
 }
