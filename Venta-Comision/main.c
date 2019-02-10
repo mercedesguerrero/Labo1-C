@@ -15,7 +15,6 @@
 
 int menu();
 void presionarContinuar();
-int getInt(char* mensaje);
 
 int main()
 {
@@ -51,28 +50,25 @@ int main()
             break;
         case 4:
             system("cls");
-            printf("\n ---------------------------------------------------------------------------");
-            printf("\n|       1- EXPERTO       |       2- ESTANDARD       |       3- JUNIOR       |");
-            printf("\n ---------------------------------------------------------------------------");
-            respuesta= getInt("\n\nIngrese el numero asociado al nivel para el que desea generar la lista: ");
+            respuesta= seleccionarNivel();
 
             switch(respuesta)
             {
-                case 1:
+                case 0:
                     if(guardarArchivoVendedores("EXPERTOS.csv", lista->filter(lista, filtrarPorExperto))==1)
                     {
                         mostrarVendedores(lista->filter(lista, filtrarPorExperto));
                         printf("\n\n Se creo el archivo de vendedores nivel EXPERTO\n");
                     }
                     break;
-                case 2:
+                case 1:
                     if(guardarArchivoVendedores("ESTANDARD.csv", lista->filter(lista, filtrarPorEstandard))==1)
                     {
                         mostrarVendedores(lista->filter(lista, filtrarPorEstandard));
                         printf("\n\n Se creo el archivo de vendedores nivel ESTANDARD\n");
                     }
                     break;
-                case 3:
+                case 2:
                     if(guardarArchivoVendedores("JUNIOR.csv", lista->filter(lista, filtrarPorJunior))==1)
                     {
                         mostrarVendedores(lista->filter(lista, filtrarPorJunior));
@@ -84,8 +80,16 @@ int main()
             presionarContinuar();
             break;
         case 5:
-            newVendedorParametrizado(123, "Marcelo", ESTANDARD, 120, 2485.67);
-            //agregarVendedor(lista, 3);
+            if(agregarVendedor(lista)==1)
+            {
+                printf("\n");
+                printf("\nSe agrego vendedor\n");
+                guardarArchivoVendedores("DATA.csv", lista);
+            }
+            else
+            {
+                printf("\nError\n");
+            }
             presionarContinuar();
             break;
         case 6:
@@ -97,10 +101,11 @@ int main()
             presionarContinuar();
             break;
         case 8:
-
+            newVendedorParametrizado(123, "Marcelo", ESTANDARD, 120, 2485.67);
+            //agregarVendedor(lista, 3);
             presionarContinuar();
             break;
-        case 10:
+        case 9:
             seguir = 'n';
             //guardarEmpleados("vendedores.csv", lista);
             break;
@@ -120,11 +125,11 @@ int menu()
     printf("   2- Imprimir vendedores\n");
     printf("   3- Calcular comisiones\n");
     printf("   4- Generar archivo de comisiones para nivel\n");
-    printf("   5- Vendedor hardcodeado\n");
+    printf("   5- ALTA vendedor\n");
     printf("   6- -\n");
     printf("   7- -\n");
-    printf("   8- -\n");
-    printf("  10- Salir\n");
+    printf("   8- Hardcodear vendedor-\n");
+    printf("   9- Salir\n");
     printf("\n   Ingrese opcion: ");
     fflush(stdin);
     scanf("%d", &opcion);
@@ -136,13 +141,4 @@ void presionarContinuar()
 {
     printf("\nPresione cualquier tecla para continuar ");
     getch();
-}
-
-int getInt(char* mensaje)
-{
-    int auxiliar;
-    printf("%s",mensaje);
-    scanf("%d",&auxiliar);
-
-    return auxiliar;
 }

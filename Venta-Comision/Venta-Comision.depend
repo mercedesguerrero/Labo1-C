@@ -165,11 +165,11 @@
 
 1549723219 c:\users\mechu\documents\labo1-c\venta-comision\arraylist.h
 
-1549723219 c:\users\mechu\documents\labo1-c\venta-comision\vendedor.h
+1549826895 c:\users\mechu\documents\labo1-c\venta-comision\vendedor.h
 
 1549731090 c:\users\mechu\documents\labo1-c\venta-comision\parser.h
 
-1549731238 source:c:\users\mechu\documents\labo1-c\venta-comision\main.c
+1549826895 source:c:\users\mechu\documents\labo1-c\venta-comision\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -178,7 +178,7 @@
 	"Vendedor.h"
 	"Parser.h"
 
-1549731090 source:c:\users\mechu\documents\labo1-c\venta-comision\parser.c
+1549731827 source:c:\users\mechu\documents\labo1-c\venta-comision\parser.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -186,7 +186,7 @@
 	"Vendedor.h"
 	"Parser.h"
 
-1549723573 source:c:\users\mechu\documents\labo1-c\venta-comision\vendedor.c
+1549748366 source:c:\users\mechu\documents\labo1-c\venta-comision\vendedor.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

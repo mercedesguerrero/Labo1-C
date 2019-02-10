@@ -225,26 +225,28 @@ int get_isEmpty(eVendedor* unVendedor)
 
 //----------------------------------------------------------------------------------
 
-void agregarVendedor(ArrayList* vendedores, int _nivel)
+int agregarVendedor(ArrayList* vendedores)
 {
     eVendedor* nuevoVendedor;
 
     int esta;
     int id;
+    int retorno= -1;
+    char aux_nombre[30];
+    float aux_float;
 
     system("cls");
     printf("\n   *** Alta Vendedor ***\n\n");
 
-
-    printf(" Ingrese id: ");
-    scanf("%d", &id);
+    id= getInt(" Ingrese id: ");
+    fflush(stdin);
 
     esta = buscarVendedor(vendedores, id);
 
         if(esta != -1)
         {
             printf("Existe un Vendedor con el id %d\n", id);
-            //mostrarVendedor((eVendedor*)vendedores->get(vendedores,esta));
+            retorno= 0;
         }
         else
         {
@@ -252,30 +254,58 @@ void agregarVendedor(ArrayList* vendedores, int _nivel)
 
             if(nuevoVendedor != NULL){
 
-            nuevoVendedor->id = id;
+            set_id(nuevoVendedor, id);
 
             printf(" Ingrese nombre: ");
+            gets(aux_nombre);
             fflush(stdin);
-            gets(nuevoVendedor->nombre);
+            set_nombre(nuevoVendedor, aux_nombre);
 
-            printf(" Ingrese cantidad de productos vendidos: ");
+            set_cant_prod_vendidos(nuevoVendedor, getInt(" Ingrese cantidad de productos vendidos: "));
             fflush(stdin);
-            scanf("%d", &nuevoVendedor->cant_prod_vendidos);
 
             printf(" Ingrese monto vendido: ");
             fflush(stdin);
-            scanf("%f", &nuevoVendedor->monto_vendido);
+            scanf("%f", &aux_float);
+            set_monto_vendido(nuevoVendedor, aux_float);
 
-            nuevoVendedor->nivel = _nivel;
+            set_nivel(nuevoVendedor, seleccionarNivel());
 
-            nuevoVendedor->isEmpty = 1;
+            set_isEmpty(nuevoVendedor, 1);
 
             vendedores->add(vendedores, nuevoVendedor);
 
+            retorno= 1;
             }
     }
-    printf("\n");
 
+    return retorno;
+}
+
+int seleccionarNivel()
+{
+    int opcion;
+    int retorno;
+
+    printf("\n ---------------------------------------------------------------------------");
+    printf("\n|       1- EXPERTO       |       2- ESTANDARD       |       3- JUNIOR       |");
+    printf("\n ---------------------------------------------------------------------------");
+    opcion= getInt("\n\nIngrese el numero asociado al nivel para el que desea generar la lista: ");
+
+    switch(opcion)
+    {
+        case 1:
+            retorno= 0;
+            break;
+        case 2:
+            retorno= 1;
+            break;
+        case 3:
+            retorno= 2;
+            break;
+    }
+
+    return retorno;
 }
 
 void mostrarVendedor(eVendedor* unVendedor)
@@ -390,4 +420,11 @@ int filtrarPorJunior(eVendedor* unVendedor)
     return ret_aux;
 }
 
+int getInt(char* mensaje)
+{
+    int auxiliar;
+    printf("%s",mensaje);
+    scanf("%d",&auxiliar);
 
+    return auxiliar;
+}

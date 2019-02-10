@@ -32,10 +32,12 @@ int get_isEmpty(eVendedor* unVendedor);
 
 char* cargarDescripcion(int valor);
 
-void agregarVendedor(ArrayList* vendedores, int _nivel);
+int agregarVendedor(ArrayList* vendedores);
 void mostrarVendedor(eVendedor* unVendedor);
 void mostrarVendedores(ArrayList* lista);
 int buscarVendedor(ArrayList* lista, int id);
+
+int seleccionarNivel();
 
 int calcularComision(eVendedor* unVendedor);
 
@@ -43,3 +45,4 @@ int filtrarPorExperto(eVendedor* unVendedor);
 int filtrarPorEstandard(eVendedor* unVendedor);
 int filtrarPorJunior(eVendedor* unVendedor);
 
+int getInt(char* mensaje);
