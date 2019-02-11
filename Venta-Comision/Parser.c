@@ -76,7 +76,10 @@ int guardarArchivoVendedores(char* path, ArrayList* listaVendedores)
         for(int i=0; i < listaVendedores->len(listaVendedores); i++)
         {
             unVendedor = (eVendedor*)listaVendedores->get(listaVendedores, i);
-            fprintf(f,"%d,%s,%d,%d,%.2f,%.2f\n", get_id(unVendedor), get_nombre(unVendedor), get_nivel(unVendedor), get_cant_prod_vendidos(unVendedor), get_monto_vendido(unVendedor), unVendedor->comision);
+            if(get_isEmpty(unVendedor)== OCUPADO)
+            {
+                fprintf(f,"%d,%s,%d,%d,%.2f,%.2f\n", get_id(unVendedor), get_nombre(unVendedor), get_nivel(unVendedor), get_cant_prod_vendidos(unVendedor), get_monto_vendido(unVendedor), unVendedor->comision);
+            }
         }
         retorno= 1;
         fclose(f);

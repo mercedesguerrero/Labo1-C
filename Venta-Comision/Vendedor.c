@@ -330,8 +330,8 @@ void mostrarVendedores(ArrayList* lista)
     printf("---------------------------------------------------------------------------------------------\n\n");
     for(int i=0; i< lista->len(lista); i++)
     {
-        unVendedor = (eVendedor*) lista->get(lista, i);
-        if( unVendedor->isEmpty == OCUPADO)
+        unVendedor= (eVendedor*)lista->get(lista, i);
+        if(unVendedor->isEmpty == OCUPADO)
         {
             mostrarVendedor(unVendedor);
         }
@@ -428,3 +428,99 @@ int getInt(char* mensaje)
 
     return auxiliar;
 }
+
+void eliminarVendedor(ArrayList* vendedores)
+{
+    int id;
+    int esta;
+    char borrar;
+    eVendedor* unVendedor;
+    system("cls");
+    printf("\n*** Borrar Vendedor ***\n\n");
+    id= getInt("Ingrese id: ");
+
+    esta = buscarVendedor(vendedores, id);
+
+    if(esta == -1)
+    {
+        printf("No hay ningun Vendedor con el id %d\n", id);
+    }
+    else
+    {
+        printf("\nVendedor encontrado!!!\n\n");
+        unVendedor = (eVendedor*)vendedores->get(vendedores, id);
+        mostrarVendedor(unVendedor);
+
+        printf("\nConfirma borrado?: ");
+        fflush(stdin);
+        scanf("%c", &borrar);
+        if(borrar != 's')
+        {
+            printf("Borrado cancelado\n\n");
+        }
+        else
+        {
+            set_isEmpty(unVendedor, LIBRE);
+            printf("Se ha eliminado el Vendedor\n\n");
+        }
+        system("pause");
+    }
+
+}
+
+void modificarVendedor(ArrayList* vendedores)
+{
+    int id;
+    int esta;
+    char modificar;
+    int nuevoNivel;
+    eVendedor* unVendedor;
+    system("cls");
+    printf("\n*** Modificar vendedor ***\n\n");
+    id= getInt("Ingrese id: ");
+    fflush(stdin);
+
+    esta= buscarVendedor(vendedores, id);
+
+    if(esta== -1)
+    {
+        printf("No hay ningun Vendedor con el id %d\n", id);
+    }
+    else
+    {
+        unVendedor= (eVendedor*)vendedores->get(vendedores, id);
+        mostrarVendedor(unVendedor);
+
+        printf("\nModifica nivel?: s/n ");
+        fflush(stdin);
+        scanf("%c", &modificar);
+        if(modificar != 's')
+        {
+            printf("Modificacion cancelada\n\n");
+        }
+        else
+        {
+            printf("\n ---------------------------------------------------------------------------");
+            printf("\n|       1- EXPERTO       |       2- ESTANDARD       |       3- JUNIOR       |");
+            printf("\n ---------------------------------------------------------------------------");
+            nuevoNivel= getInt("\n\nIngrese el numero asociado al nivel nuevo que desea asociar: ");
+
+            switch(nuevoNivel)
+            {
+                case 1:
+                    set_nivel(unVendedor, 0);
+                    break;
+                case 2:
+                    set_nivel(unVendedor, 1);
+                    break;
+                case 3:
+                    set_nivel(unVendedor, 2);
+                    break;
+            }
+            printf("Se ha modificado el nivel con exito\n\n");
+        }
+
+        system("pause");
+    }
+}
+

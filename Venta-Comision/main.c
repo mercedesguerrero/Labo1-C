@@ -93,11 +93,13 @@ int main()
             presionarContinuar();
             break;
         case 6:
-
+            modificarVendedor(lista);
+            guardarArchivoVendedores("DATA.csv", lista);
             presionarContinuar();
             break;
         case 7:
-
+            eliminarVendedor(lista);
+            guardarArchivoVendedores("DATA.csv", lista);
             presionarContinuar();
             break;
         case 8:
@@ -126,8 +128,8 @@ int menu()
     printf("   3- Calcular comisiones\n");
     printf("   4- Generar archivo de comisiones para nivel\n");
     printf("   5- ALTA vendedor\n");
-    printf("   6- -\n");
-    printf("   7- -\n");
+    printf("   6- MODIFICAR vendedor-\n");
+    printf("   7- ELIMINAR vendedor-\n");
     printf("   8- Hardcodear vendedor-\n");
     printf("   9- Salir\n");
     printf("\n   Ingrese opcion: ");
