@@ -1,5 +1,5 @@
 ID,Nombre,Nivel,Cant prod vendidos,Monto vendido,Comision
-1,Fedora,2,117,43136.99,862.74
+1,Ariadna,2,89,117.00,2.34
 2,Blanca,2,152,20984.77,419.70
 6,Kyle,2,183,87481.40,1749.63
 8,Vanya,2,174,85760.90,1715.22
@@ -29,4 +29,4 @@ ID,Nombre,Nivel,Cant prod vendidos,Monto vendido,Comision
 89,Delmore,2,7,56085.43,1121.71
 90,Didi,2,137,84333.43,1686.67
 93,Jennifer,2,174,77226.76,1544.54
-96,Clarey,2,113,92482.05,1849.64
+103,George,2,123,3456.76,69.14

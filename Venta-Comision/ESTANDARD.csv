@@ -1,4 +1,5 @@
 ID,Nombre,Nivel,Cant prod vendidos,Monto vendido,Comision
+0,Cesar,1,156,16732.00,836.60
 3,Robby,1,99,83447.29,2920.66
 20,Baxter,1,54,2754.30,96.40
 28,Rodie,1,102,135.04,6.75
@@ -22,5 +23,7 @@ ID,Nombre,Nivel,Cant prod vendidos,Monto vendido,Comision
 78,Marty,1,17,36828.54,1289.00
 88,Georgi,1,41,93000.20,3255.01
 91,Henriette,1,103,25387.08,1269.35
+96,Clarey,1,113,92482.05,4624.10
 97,Malvina,1,74,49810.87,1743.38
 100,Gray,1,183,62832.17,3141.61
+102,Leandro,1,267,6783.00,339.15

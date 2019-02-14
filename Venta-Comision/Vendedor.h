@@ -46,3 +46,6 @@ int filtrarPorEstandard(eVendedor* unVendedor);
 int filtrarPorJunior(eVendedor* unVendedor);
 
 int getInt(char* mensaje);
+
+void eliminarVendedor(ArrayList* vendedores);
+void modificarVendedor(ArrayList* vendedores);

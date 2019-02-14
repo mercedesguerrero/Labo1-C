@@ -22,14 +22,14 @@ void parsearVendedores(char* path, ArrayList* listaVendedores)
     if(f != NULL && listaVendedores != NULL)
     {
 
-        fscanf(f,"%[^,],%[^,],%[^,],%[^,],%s\n", buffer[0],buffer[1],buffer[2],buffer[3],buffer[4]);
+        fscanf(f,"%[^,],%[^,],%[^,],%[^,],%[^,],%s\n", buffer[0],buffer[1],buffer[2],buffer[3],buffer[4],buffer[5]);
 
         while( !feof(f))
         {
 
-            cant =  fscanf(f,"%[^,],%[^,],%[^,],%[^,],%s\n", buffer[0],buffer[1],buffer[2],buffer[3],buffer[4]);
+            cant =  fscanf(f,"%[^,],%[^,],%[^,],%[^,],%[^,],%s\n", buffer[0],buffer[1],buffer[2],buffer[3],buffer[4],buffer[5]);
 
-            if(cant == 5)
+            if(cant == 6)
             {
                 nuevoVendedor = newVendedor();
 
@@ -40,13 +40,11 @@ void parsearVendedores(char* path, ArrayList* listaVendedores)
                     nuevoVendedor->nivel = atoi(buffer[2]);
                     nuevoVendedor->cant_prod_vendidos =  atoi(buffer[3]);
                     nuevoVendedor->monto_vendido = atof(buffer[4]);
+                    nuevoVendedor->comision = set_comision(nuevoVendedor, get_comision(nuevoVendedor));
 
-                    //nuevoVendedor->comision = set_comision(nuevoVendedor, 2.3);
                     nuevoVendedor->isEmpty = set_isEmpty(nuevoVendedor, OCUPADO);
 
-                    listaVendedores->add(listaVendedores, nuevoVendedor);// si
-
-                    //al_add(listaVendedores, nuevoVendedor); no
+                    listaVendedores->add(listaVendedores, nuevoVendedor);
                 }
             }
             else

@@ -344,10 +344,10 @@ int buscarVendedor(ArrayList* lista, int id)
     int indice = -1;
     eVendedor* unVendedor;
 
-    for(int i=0; i < lista->len(lista); i++)
+    for(int i=0; i< lista->len(lista); i++)
     {
         unVendedor = (eVendedor*)lista->get(lista, i);
-        if( unVendedor->id == id && unVendedor->isEmpty == 1)
+        if( get_id(unVendedor) == id && unVendedor->isEmpty == 1)
         {
             indice = i;
             break;
@@ -443,7 +443,7 @@ void eliminarVendedor(ArrayList* vendedores)
 
     if(esta == -1)
     {
-        printf("No hay ningun Vendedor con el id %d\n", id);
+        printf("\nNo hay ningun Vendedor con el id %d\n", id);
     }
     else
     {
@@ -456,16 +456,14 @@ void eliminarVendedor(ArrayList* vendedores)
         scanf("%c", &borrar);
         if(borrar != 's')
         {
-            printf("Borrado cancelado\n\n");
+            printf("\nBorrado cancelado\n\n");
         }
         else
         {
             set_isEmpty(unVendedor, LIBRE);
-            printf("Se ha eliminado el Vendedor\n\n");
+            printf("\nSe ha eliminado el Vendedor\n\n");
         }
-        system("pause");
     }
-
 }
 
 void modificarVendedor(ArrayList* vendedores)
@@ -484,7 +482,7 @@ void modificarVendedor(ArrayList* vendedores)
 
     if(esta== -1)
     {
-        printf("No hay ningun Vendedor con el id %d\n", id);
+        printf("\nNo hay ningun Vendedor con el id %d\n", id);
     }
     else
     {
@@ -517,10 +515,8 @@ void modificarVendedor(ArrayList* vendedores)
                     set_nivel(unVendedor, 2);
                     break;
             }
-            printf("Se ha modificado el nivel con exito\n\n");
+            printf("\nSe ha modificado el nivel con exito\n\n");
         }
-
-        system("pause");
     }
 }
 
