@@ -20,6 +20,7 @@ int main()
 {
     char seguir = 's';
     ArrayList* lista = al_newArrayList();
+    //newVendedorParametrizado(123, "Marcelo", ESTANDARD, 120, 2485.67);
 
     int respuesta;
 
@@ -103,8 +104,8 @@ int main()
             presionarContinuar();
             break;
         case 8:
-            newVendedorParametrizado(123, "Marcelo", ESTANDARD, 120, 2485.67);
-            //agregarVendedor(lista, 3);
+            lista->sort(lista, compararComisiones, 0);
+            mostrarVendedores(lista);
             presionarContinuar();
             break;
         case 9:
@@ -130,7 +131,7 @@ int menu()
     printf("   5- ALTA vendedor\n");
     printf("   6- MODIFICAR vendedor\n");
     printf("   7- ELIMINAR vendedor\n");
-    printf("   8- Hardcodear vendedor\n");
+    printf("   8- Ordenar por mayor comision\n");
     printf("   9- Salir\n");
     printf("\n   Ingrese opcion: ");
     fflush(stdin);

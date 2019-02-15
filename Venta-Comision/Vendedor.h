@@ -49,3 +49,5 @@ int getInt(char* mensaje);
 
 void eliminarVendedor(ArrayList* vendedores);
 void modificarVendedor(ArrayList* vendedores);
+
+int compararComisiones(void* x, void* y);

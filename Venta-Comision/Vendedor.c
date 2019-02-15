@@ -520,3 +520,25 @@ void modificarVendedor(ArrayList* vendedores)
     }
 }
 
+int compararComisiones(void* x, void* y)
+{
+    eVendedor* vendedor1 = (eVendedor*)x;
+    eVendedor* vendedor2 = (eVendedor*)y;
+    int retorno;
+
+    if(get_comision(vendedor1) == get_comision(vendedor2))
+    {
+        retorno = 0;
+    }
+    else if( get_comision(vendedor1) > get_comision(vendedor2))
+    {
+        retorno = 1;
+    }
+    else
+    {
+        retorno = -1;
+    }
+
+    return retorno;
+}
+
